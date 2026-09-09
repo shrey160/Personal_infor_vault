@@ -1,3 +1,4 @@
 # Session Log (append-only)
 
 - 2026-09-10 — bootstrapped memory workspace from CHAT-MEMORY-SEED_2.md — touched: AGENTS.md, personality.md, user.md, memory/short_term.md, memory/long_term.md, memory/long_term_topics/_template.md, memory/topics/_template.md, memory/sessions.md, knowledge/_index.md
+- 2026-09-10 — photonics research (state-of-field survey) + PsiQuantum deep-dive; first Obsidian vault sync — touched: knowledge/photonics/state-of-photonics-2026.md, knowledge/photonics/psiquantum-status-2026.md, knowledge/_index.md, memory/topics/photonics-state-of-field.md, memory/short_term.md, vault: Chat Workspace/Knowledge/photonics/*, Chat Workspace/Index.md, Chat Workspace/Sessions/2026-09-10.md

@@ -1,5 +1,8 @@
 # AGENTS.md — operating instructions for this chat project
 
+> **Current date: 2026-09-10** — always re-verify with the present date before
+> beginning any research or web search; do not trust stale remembered dates.
+
 This is a persistent chat workspace for research, learning, and exploration. Its
 memory lives in markdown files. You (the agent) are responsible for keeping that
 memory accurate, current, and small.
@@ -68,8 +71,11 @@ The workspace has an MCP bridge to the user's Obsidian vault (Local REST API on
 
 ## Session Workflow
 
-1. **Start of session** — read `personality.md`, `user.md`, `memory/short_term.md`,
-   `memory/long_term.md`. Read a topic file only when the conversation touches it.
+1. **Start of session / before any research** — always fetch the present date first
+   (e.g. system clock or a time tool), record it, and confirm the header date is
+   current before searching the web or drawing time-sensitive conclusions. Then read
+   `personality.md`, `user.md`, `memory/short_term.md`, `memory/long_term.md`.
+   Read a topic file only when the conversation touches it.
    Read `knowledge/` files only when relevant — locate them via the domain `_index.md`,
    never by scanning whole folders. If the user references something that should be
    in memory but isn't, say so and ask — do not fabricate continuity. Then check
