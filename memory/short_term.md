@@ -3,6 +3,31 @@
 _Budget ~100 lines. Consolidate at session end; then reset to this header._
 
 ## This session (2026-09-10)
+- obsidian-mcp: on (bridge bound at boot this session; `mcp__obsidian__*` present)
+- Session resume: user asked "what did we do last". Recap only; no new research yet.
+- **Vault sync FAILED again (2026-09-10)**: user asked to add to vault; all `mcp__obsidian__*`
+  calls (vault_list, search_simple, root vault_list) errored `Session not found`. Local REST
+  API reachable on 127.0.0.1:27123 but bare probe = `authenticated: False`. Hypothesis: plugin
+  API key/session changed since the DSH profile patch; bridge binds once at boot with stale key.
+  Fix = user checks plugin token vs `~/.dsh/profiles/web/cordis.patch.yml`, then restart `dsh web`.
+  No `vault-synced` markers written. Still pending: robotics artifact + all ai/ artifacts.
+- New research direction (user, from a different chat's context): **laser processing of
+  poly-Si** (PV + photonics). Direction-only, NOT facts — treats incoming claims as
+  leads to verify (`verify:` labels throughout). Wrote
+  `knowledge/photonics/laser-poly-si-2026.md`, indexed it, opened
+  `memory/topics/semiconductor-material-science/laser-poly-si.md` (new
+  semiconductor/material-science topic subfolder). Vault duty ON but bridge down →
+  index line left unmarked for a future ON session.
+- **Verification COMPLETE (2026-09-10)**: ran 4 parallel claims-verification subagents (one
+  per front) on laser-poly-si. All ~15 leads resolved to VERIFIED/PARTIAL/CONTRADICTED with
+  DOIs + corrected numbers. Key corrections: LECO origin = CE Cell Engineering (not
+  ISC/Fraunhofer); Krassowski = CE Cell; laser-oxidation mask = Georgia Tech 2022 (not ISC
+  Konstanz); LONGi 27.3/27.81 = HBC/HIBC, not pure poly-Si TBC (no certified pure-TBC >27%;
+  ceiling now Trina THBC 28.0% / LONGi HIBC 28.13% ISFH); 27.62% mis-attributed to Yang (a
+  separate Nature paper — Yan/BJUT + Gold Stone); citations inflated (26→~20–23, 13→9–10,
+  16→14); B2 fingers are front not rear; D2 "first" unsupported (2013 prior); 4 wrong URLs
+  flagged. Rewrote artifact as verified map, updated topic file + index. Open: read Stuttgart
+  dissertation PDF (highest-value confirmation left in Front A). Vault still down → not synced.
 - Bootstrapped the workspace from `CHAT-MEMORY-SEED_2.md`: created `AGENTS.md`
   (operating instructions), `personality.md`, `user.md`, `memory/` seeds, and
   `knowledge/_index.md`; git init; seed gitignored.
@@ -66,6 +91,30 @@ _Budget ~100 lines. Consolidate at session end; then reset to this header._
   artifacts to `Chat Workspace/Knowledge/photonics/`, wrote `Chat Workspace/Index.md`
   and `Chat Workspace/Sessions/2026-09-10.md`; backfilled `(vault-synced 2026-09-10)`
   markers in `knowledge/_index.md`.
+- (2026-09-10) World-models angle (user asked "continue with world models research"):
+  wrote `knowledge/ai/world-models-jepa-2026.md`, indexed, appended to the
+  ai-state-of-field topic. Core: LeCun JEPA (predict future *embedding*, not pixels);
+  the central problem = representation collapse. LeWorldModel (arXiv:2603.19312,
+  Mila/LeCun/Balestriero, Mar 2026) = first **stable end-to-end** JEPA from pixels with
+  a 2-term loss (next-embedding MSE + SIGReg Gaussian regularizer, 1 tuned λ, O(log n));
+  ~15M params/1 GPU, plans 48× faster than foundation WMs, +18% Push-T over PLDM, probes
+  physical quantities + surprise detection. Follow-ups: Sub-JEPA (Gaussian in frozen
+  random subspaces — beats LeWM, lower rank/straighter paths), AC-MTM "No Gaussian
+  Required" (contrastive inverse dynamics). Other side: V-JEPA 2/2.1/2-AC (Meta scale,
+  latent-space planning beats Octo/Cosmos), jepa-wms ablation (multistep rollout is the
+  lever). Tie: JEPA latent rollouts ≈ looped-transformer "latent thoughts" (same object:
+  iterate a fixed transition in a compressed state) — direct cross-pollination with
+  Shrey's loop+reservoir stack. Vault duty OFF this turn (no `mcp__obsidian__*` in the
+  present toolset) → new index line left unmarked for a future ON session.
+
+- User asked for the update on the dormant **laser-based CVD** thread (2026-09-10,
+  after Front A verification). Verdict stands unchanged, recorded in
+  `knowledge/photonics/laser-poly-si-2026.md` §Origin of interest: no meaningful
+  2024–26 work on laser-CVD / laser-driven bulk polysilicon (silane conversion,
+  Siemens alternative). Quick web re-check today confirmed nothing new — only old
+  1985 laser-induced-CVD a-Si work, unrelated metal-deposition systems, and
+  post-deposition laser *processing* papers. Adjacent-but-different: a-Si via
+  HWCVD/LPCVD/PECVD + laser crystallization/activation.
 
 ## Open loops
 - Review `personality.md` and `user.md` with the user before first real use.
