@@ -32,18 +32,55 @@ memory accurate, current, and small.
   re-read: explainers, roadmaps, comparisons, design docs, code. Keep each domain's
   `_index.md` current — one line per file.
 
+## Obsidian Vault Sync (only when MCP is active)
+
+The workspace has an MCP bridge to the user's Obsidian vault (Local REST API on
+`127.0.0.1:27123`, configured in the DSH profile patch at
+`~/.dsh/profiles/web/cordis.patch.yml`). The bridge binds at `dsh web` boot, so
+`mcp__obsidian__*` tools are present in some sessions and absent in others.
+
+1. **Gate at session start.** After the memory reads below, check this session's
+   toolset. If `mcp__obsidian__*` tools exist → vault duty ON: jot
+   `obsidian-mcp: on` into `memory/short_term.md`. If not → vault duty OFF:
+   work local-only and say nothing about the vault.
+2. **What goes to the vault.** The vault mirrors output, not memory. Exactly
+   three things, all under the vault folder `Chat Workspace/`:
+   - `Chat Workspace/Knowledge/<domain>/<file>.md` — copy of every knowledge
+     artifact, same name and content as the workspace file, plus a one-line
+     source note pointing back to the workspace path.
+   - `Chat Workspace/Index.md` — mirror of `knowledge/_index.md`.
+   - `Chat Workspace/Sessions/YYYY-MM-DD.md` — one compact note per session,
+     written at consolidation: durable takeaways, decisions, open loops. Never
+     sync raw transcripts, and never sync `personality.md`, `user.md`, or
+     anything under `memory/` — the vault is an output surface, not a second
+     memory store.
+3. **Track sync state locally.** In `knowledge/_index.md`, a line marked
+   `(vault-synced <date>)` means a vault copy exists; unmarked lines are
+   local-only and get synced by the next ON session. Backfill markers as you
+   sync older artifacts.
+4. **Vault etiquette.** Update notes in place rather than recreate; latest-wins
+   applies in the vault too; never delete or rename vault notes without an
+   explicit user request. If a vault write fails, note the failure in
+   `short_term.md` and continue — this workspace remains the source of truth.
+5. **Be efficient.** Batch vault writes; locate notes via
+   `Chat Workspace/Index.md` or search, never by scanning folders; touch only
+   what changed this session.
+
 ## Session Workflow
 
 1. **Start of session** — read `personality.md`, `user.md`, `memory/short_term.md`,
    `memory/long_term.md`. Read a topic file only when the conversation touches it.
    Read `knowledge/` files only when relevant — locate them via the domain `_index.md`,
    never by scanning whole folders. If the user references something that should be
-   in memory but isn't, say so and ask — do not fabricate continuity.
+   in memory but isn't, say so and ask — do not fabricate continuity. Then check
+   whether any `mcp__obsidian__*` tool exists in this session's toolset and set
+   vault duty ON or OFF per the section above.
 2. **During the session** — behave per `personality.md`. Jot notable facts, decisions,
    and follow-ups into `memory/short_term.md` at natural breaks. When a produced
    artifact has lasting value (explainer, roadmap, comparison, spec), save it under
    the right `knowledge/<domain>/` folder — creating the folder and updating its
-   `_index.md` — and link it from the active topic file.
+   `_index.md` — and link it from the active topic file. If vault duty is ON,
+   mirror the artifact into the Obsidian vault per the section above.
 3. **End of session / on request ("consolidate")** — run consolidation:
    - Promote durable items from `short_term.md` to `long_term.md` or the relevant
      topic file; resolve contradictions latest-wins; clear `short_term.md` to a
@@ -53,6 +90,8 @@ memory accurate, current, and small.
      link, and mark the active topic file `status: done`.
    - Update `user.md` if any stable fact about the user changed.
    - Append one line to `memory/sessions.md`.
+   - If vault duty is ON: write the session note to `Chat Workspace/Sessions/`
+     and refresh `Chat Workspace/Index.md`.
 4. **Hard rules** — `sessions.md` is append-only; memory files have budgets —
    compress, don't sprawl; mark uncertain facts `(unverified)`; never present
    guessed continuity as real memory; never file session state into `knowledge/`.

@@ -27,6 +27,9 @@ _Last updated: 2026-09-10. Update in place; latest wins._
   then commissions a formal spec.
 - Learns in free time — plans must be flexible and dependency-ordered, not scheduled.
 - Keeps Obsidian notes; likes agent scaffolds that manage knowledge bases.
+- Has connected the Obsidian vault to this workspace over MCP (Local REST API on
+  127.0.0.1:27123) — expects the agent to maintain vault notes when the bridge
+  is active (2026-09-10).
 
 ## Corrections log
 - (append: date — what the user corrected — old → new)

@@ -10,4 +10,7 @@ latest wins, note the date._
 - <topic>: <conclusion, one line> (<date>) → details: long_term_topics/<topic>.md
 
 ## Recurring constraints
+- Obsidian vault connected over MCP (`mcp__obsidian__*` tools, Local REST API on
+  127.0.0.1:27123); tools bind at `dsh web` boot, so check the session toolset
+  before vault duties (2026-09-10) (unverified)
 - <environment/tooling/deadline that keeps coming back> (<date>)
