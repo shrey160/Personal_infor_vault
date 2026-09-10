@@ -4,7 +4,11 @@ _Compiled 2026-09-10 for Shrey. This is the theory/architecture angle of the AI
 survey, and it sits right on Shrey's own research stack (nanoGPT-scale looped
 transformers + reservoir computing hybrids, KV-cache memory math, inference-time
 tradeoffs). Present date confirmed 2026-09-10. Treated as an active theory thread:
-I tie each family to concrete 2025-26 papers and flag what is proven vs open.
+I tie each family to concrete 2025-26 papers and flag what is proven vs open._
+
+_Applied-literature companion (what's actually published, 2026-09-10): see
+[`looped-reservoir-hybrid-literature-2026.md`](looped-reservoir-hybrid-literature-2026.md)
+— EST, FRESCO, ESN-LM at scale; the looped×reservoir combination is still open._
 
 ---
 

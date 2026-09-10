@@ -69,6 +69,28 @@ The workspace has an MCP bridge to the user's Obsidian vault (Local REST API on
    `Chat Workspace/Index.md` or search, never by scanning folders; touch only
    what changed this session.
 
+### Folder hubs & sub-folders (graph conventions)
+
+This is a standing structural preference for how knowledge folders map to graph
+nodes — apply it in **both** the vault and the local `knowledge/` tree:
+
+- Every domain folder `Knowledge/<x>/` (and local `knowledge/<x>/`) gets a **hub
+  note** `_<name>.md`, tagged **`folder-hub`** (tag = red colour in the graph view's
+  color group). All members link up to their hub.
+- A **sub-folder** (e.g. `robotics/A`, `robotics/B`) gets its own hub node/REAME,
+  tagged **`sub-folder`**. Sub-folder hubs link up to the parent folder hub as well
+  as their own members.
+- An **interdisciplinary sub-folder** (e.g. `robotics/physical_ai`, spanning both
+  AI and robotics) is **kept inside its parent folder** but tagged
+  **`interdisciplinary`**, and its hub links to **both** the parent folder hub and
+  the other domain hub it spans (here: `ai/_ai` **and** `robotics/_robotics`).
+- A folder with sub-folders carries a short **README** (local: a `_index.md` or
+  README in that folder; vault: the hub note) describing what lives there and the
+  folder's role.
+
+When you create or reorganise folders/sub-folders, follow this convention and note
+it as a durable preference.
+
 ## Session Workflow
 
 1. **Start of session / before any research** — always fetch the present date first

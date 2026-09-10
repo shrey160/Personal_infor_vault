@@ -49,6 +49,12 @@ matching photonics/robotics survey format.
   FLOPs × reservoir for 0-cost memory. Open: nanoGPT-scale experiment worth running =
   init recurrent weights as echo-state reservoir prior to get stability + learned
   precision; and does looped scaling hold past ~1.4B?
+- (2026-09-10) Applied-lit follow-up (user: "has anyone worked on looped + reservoir
+  transformer?"): dedicated thread memory/topics/looped-reservoir-literature.md +
+  knowledge/ai/looped-reservoir-hybrid-literature-2026.md. Answer: reservoir×transformer
+  published (Echo State Transformer 2507.02917: attend over parallel ESN reservoir units,
+  linear complexity; FRESCO 2606.24969: O(N) frequency-domain ESN; ESN-LM at scale
+  2503.01724). The looped×reservoir triple combo stays open → Shrey's contributor edge.
 - (2026-09-10) World-model angle (user asked): latent/JEPA line. Wrote
   knowledge/ai/world-models-jepa-2026.md. Core: JEPA = predict future *embedding* not
   pixels (LeCun 2022); central problem = representation collapse. LeWM (Mar 2026,
@@ -67,11 +73,12 @@ matching photonics/robotics survey format.
   state) — direct cross-pollination with Shrey's loop+reservoir stack.
 
 ## Artifacts
-- knowledge/ai/state-of-ai-2026.md (indexed; vault pending — bridge down)
-- knowledge/ai/ai-safety-eval-gap-2026.md (indexed; vault pending — bridge down)
-- knowledge/ai/ai-technical-architectural-2026.md (indexed; vault pending — bridge down)
-- knowledge/ai/looped-hybrid-reservoir-theory.md (indexed; vault pending — bridge down)
-- knowledge/ai/world-models-jepa-2026.md (indexed; vault pending — bridge down)
+- knowledge/ai/state-of-ai-2026.md (indexed; vault-synced 2026-09-10)
+- knowledge/ai/ai-safety-eval-gap-2026.md (indexed; vault-synced 2026-09-10)
+- knowledge/ai/ai-technical-architectural-2026.md (indexed; vault-synced 2026-09-10)
+- knowledge/ai/looped-hybrid-reservoir-theory.md (indexed; vault-synced 2026-09-10)
+- knowledge/ai/looped-reservoir-hybrid-literature-2026.md (indexed; vault-synced 2026-09-10)
+- knowledge/ai/world-models-jepa-2026.md (indexed; vault-synced 2026-09-10)
 
 ## Next steps
 - Park or extend per user direction.

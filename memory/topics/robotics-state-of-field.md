@@ -25,6 +25,11 @@ active thread for follow-ups and deep-dives.
 - Want a unit-economics model calculator or a closer look at the data-collection bottleneck?
 - Follow-up (2026-09-10): **Generalist AI (GEN-1.5)** — one-demo "physical prompt" learning; sim demos usable; emergent, company-reported only, unverified.
 
+Interlinked: the **Physical AI** umbrella thread (interdisciplinary, robotics×AI) is
+`memory/topics/physical-ai-state-of-field.md` → artifact `knowledge/robotics/physical_ai/`.
+It extends this robotics survey: sense-decide-act scope (9 verticals), "compute is data",
+safety-cert as binding gate, market $430B→$1.6T.
+
 ## Artifacts
 - knowledge/robotics/state-of-robotics-2026.md (indexed, vault-synced 2026-09-10)
 

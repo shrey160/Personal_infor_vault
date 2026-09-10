@@ -1,23 +1,49 @@
 # Knowledge Index
 
-_One line per file, grouped by domain folder. Update whenever a file lands or moves.
-Locate content via this index — never scan whole folders at session start._
+_Points only at the **top-level domain folders** in `knowledge/`, one short summary per
+folder. Per-file detail lives inside each folder's README / hub note
+(`knowledge/<x>/README.md`, sub-folder `_index.md`). Never scan whole folders at session
+start — open the folder README to find a file._
 
-_Vault sync: a line marked `(vault-synced <date>)` has a copy in the Obsidian
-vault under `Chat Workspace/Knowledge/...`; unmarked lines are local-only. Only
-mark lines in a session where the `mcp__obsidian__*` tools are actually present._
+_Vault sync: folder entries are in the Obsidian vault under
+`Chat Workspace/Knowledge/<domain>/` (marked `vault-synced 2026-09-10`). The vault
+`Index.md` mirrors this folder-level structure._
 
-## ai/
-- state-of-ai-2026.md — survey of AI Sep 2026: frontier leaderboard, GPT-6 Astra (real jump, not AGI), China/open-model surge, agentic shift, safety/eval gap (2026-09-10)
-- ai-safety-eval-gap-2026.md — deep-dive: FLI scores, METR rogue-deployment, CoT-encryption exploit, CISA/CAISI institutionalization, public-verification debate (2026-09-10)
-- ai-technical-architectural-2026.md — arch deep-dive: linear/latent attention adoption curves, Kimi K3 (896-expert MoE, KDA+MLA), SubQ/SSA, MoE dominance, quiet-convergence thesis (2026-09-10)
-- looped-hybrid-reservoir-theory.md — theory comparison: looped transformers (depth-recurrence, Attractor Models) vs hybrid lin/MoE vs reservoir computing; synthesis + open questions (2026-09-10)
-- world-models-jepa-2026.md — world models survey, latent/JEPA line: representation collapse, LeWorldModel (two-term loss, SIGReg), Sub-JEPA/AC-MTM, V-JEPA 2/2.1/2-AC, jepa-wms ablation, 2024-26 timeline, ties to looped/reservoir stack (2026-09-10)
+_Organisation: each domain folder carries a `README.md` (folder role + contents +
+cross-links; vault equivalent is the `folder-hub` note). Sub-folders get an `_index.md`
+tagged `sub-folder`; interdisciplinary sub-folders stay in their parent, tagged
+`interdisciplinary`, linking to both spanned domains._
 
-## robotics/
-- state-of-robotics-2026.md — survey of robotics 2026: mainstream warehouse automation, humanoid deployment status, robot foundation models, TRL reality, outlook (2026-09-10)
+## ai/ — AI research
+Field survey (Sep 2026) plus deep-dives: safety/eval gap, technical architecture, theory
+(looped × hybrid × reservoir), and world models / latent-JEPA. README → `ai/README.md`.
+_(vault-synced 2026-09-10)_
 
-## photonics/
-- laser-poly-si-2026.md — VERIFIED research map (2026-09-10, 4 claims-verification passes) on laser processing of poly-Si: furnace-replacement activation, poly-finger/TBC patterning, LECO, laser poly-Si photonics; corrected origins (CE Cell Engineering, Georgia Tech), technology labels, citations, URLs
-- state-of-photonics-2026.md — present state of photonics across AI/compute, communications, and quantum (2026-09-10) (vault-synced 2026-09-10)
-- psiquantum-status-2026.md — PsiQuantum deep-dive: funding, site groundbreaking, manufacturing, leadership (2026-09) (vault-synced 2026-09-10)
+## robotics/ — robotics
+Mainstream intralogistics adoption, humanoid deployment, and the shift of value to the
+robot-foundation-model layer. Sub-folder `physical_ai/` (interdisciplinary — AI that
+senses/decides/acts in the world). README → `robotics/README.md`.
+_(vault-synced 2026-09-10)_
+
+## space/ — space
+Space missions and the autonomy-and-robotics layer (embodied intelligence, planetary
+world models, ISRU robotics, long-duration human presence). Sub-folder `ai_robotics/`
+(interdisciplinary, spans space + AI/robotics: ESA embodied-intelligence + Hera flying-lab)
+and `on-orbit-docking/` (sub-folder: autonomous RPO / ISAM). README → `space/README.md`.
+_(vault-synced 2026-09-10)_
+
+## system_design/ — system design
+Interview-prep packages for AI-adjacent system design. **RAG** — complete package (two-phase
+architecture, component deep-dives, Naive/Advanced/Modular taxonomy, RAG-vs-fine-tuning,
+scaling/cost, failure modes, 45-min walk-through, question bank). **Agent/coding harness** —
+complete package (control loop Thread/Turn/Item, tool interface + MCP, sandbox + safety gate,
+context compaction, cost/budget control, harness-vs-workflow helper, SWE-bench evaluation).
+README → `system_design/README.md`. _(vault-synced 2026-09-10)_
+
+## photonics/ — photonics
+Present state across AI/compute, communications, quantum; PsiQuantum; laser processing of
+poly-Si. README → `photonics/README.md`. _(vault-synced 2026-09-10)_
+
+## dshtools/ — DSH/Obsidian tooling
+Operational notes on this tooling (Obsidian MCP bridge: what works + its quirks). README →
+`dshtools/README.md`. _(vault-synced 2026-09-10)_
